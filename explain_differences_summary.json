@@ -1,0 +1,204 @@
+{
+  "ablation_summary": [
+    {
+      "arm": "A_baseline_features_RF (published baseline)",
+      "accuracy_mean": 0.7903320848938826,
+      "accuracy_std": 0.041374875877687525,
+      "f1_mean": 0.7041488358713357,
+      "f1_std": 0.0573970810139118,
+      "roc_auc_mean": 0.8443533825651472,
+      "roc_auc_std": 0.043273061078919574
+    },
+    {
+      "arm": "B_baseline_features_HGB (model swap only)",
+      "accuracy_mean": 0.7748614232209738,
+      "accuracy_std": 0.0385897243116254,
+      "f1_mean": 0.6801442754442555,
+      "f1_std": 0.05812012375174666,
+      "roc_auc_mean": 0.8446111988229635,
+      "roc_auc_std": 0.03896480490965968
+    },
+    {
+      "arm": "C_my_features_RF (features swap only)",
+      "accuracy_mean": 0.8295980024968789,
+      "accuracy_std": 0.03537295722920976,
+      "f1_mean": 0.7651929359207595,
+      "f1_std": 0.051640940728028974,
+      "roc_auc_mean": 0.8709772515066632,
+      "roc_auc_std": 0.03739274882389417
+    },
+    {
+      "arm": "D_my_features_HGB (my full solution)",
+      "accuracy_mean": 0.8275905118601748,
+      "accuracy_std": 0.029372702732995054,
+      "f1_mean": 0.7638336749160064,
+      "f1_std": 0.0487513965238799,
+      "roc_auc_mean": 0.8732250969074498,
+      "roc_auc_std": 0.034531237625414615
+    }
+  ],
+  "decomposition": [
+    {
+      "effect": "Feature engineering alone (RF model held fixed)",
+      "mean_accuracy_delta": 0.039265917602996254,
+      "std": 0.02812252332842517,
+      "paired_t_pvalue": 3.0724186917795967e-13
+    },
+    {
+      "effect": "Feature engineering alone (HGB model held fixed)",
+      "mean_accuracy_delta": 0.052729088639201,
+      "std": 0.03821889408605924,
+      "paired_t_pvalue": 4.5463929212910007e-13
+    },
+    {
+      "effect": "Model choice alone (baseline features held fixed)",
+      "mean_accuracy_delta": -0.015470661672908862,
+      "std": 0.02008496779634942,
+      "paired_t_pvalue": 1.6459936363060567e-06
+    },
+    {
+      "effect": "Model choice alone (engineered features held fixed)",
+      "mean_accuracy_delta": -0.002007490636704119,
+      "std": 0.030565454427520077,
+      "paired_t_pvalue": 0.6444062911443394
+    },
+    {
+      "effect": "Total: my full solution minus baseline",
+      "mean_accuracy_delta": 0.037258426966292134,
+      "std": 0.0421988375843383,
+      "paired_t_pvalue": 9.861038690917214e-08
+    },
+    {
+      "effect": "Interaction (non-additive residual)",
+      "mean_accuracy_delta": 0.013463171036204744,
+      "std": 0.03167702565569131,
+      "paired_t_pvalue": 0.004174193311417954
+    }
+  ],
+  "net_fixed": 68,
+  "net_broken": 33,
+  "by_sex_pclass": [
+    {
+      "Sex": "male",
+      "Pclass": 2,
+      "n": 108,
+      "survival_rate": 0.1574074074074074,
+      "baseline_accuracy": 0.8148148148148148,
+      "mine_accuracy": 0.9074074074074074,
+      "accuracy_gap": 0.09259259259259267
+    },
+    {
+      "Sex": "female",
+      "Pclass": 3,
+      "n": 144,
+      "survival_rate": 0.5,
+      "baseline_accuracy": 0.5763888888888888,
+      "mine_accuracy": 0.6597222222222222,
+      "accuracy_gap": 0.08333333333333337
+    },
+    {
+      "Sex": "male",
+      "Pclass": 3,
+      "n": 347,
+      "survival_rate": 0.13544668587896252,
+      "baseline_accuracy": 0.8645533141210374,
+      "mine_accuracy": 0.899135446685879,
+      "accuracy_gap": 0.03458213256484155
+    },
+    {
+      "Sex": "male",
+      "Pclass": 1,
+      "n": 122,
+      "survival_rate": 0.36885245901639346,
+      "baseline_accuracy": 0.6147540983606558,
+      "mine_accuracy": 0.6229508196721312,
+      "accuracy_gap": 0.008196721311475419
+    },
+    {
+      "Sex": "female",
+      "Pclass": 1,
+      "n": 94,
+      "survival_rate": 0.9680851063829787,
+      "baseline_accuracy": 0.9680851063829787,
+      "mine_accuracy": 0.9680851063829787,
+      "accuracy_gap": 0.0
+    },
+    {
+      "Sex": "female",
+      "Pclass": 2,
+      "n": 76,
+      "survival_rate": 0.9210526315789473,
+      "baseline_accuracy": 0.9210526315789473,
+      "mine_accuracy": 0.9210526315789473,
+      "accuracy_gap": 0.0
+    }
+  ],
+  "by_title": [
+    {
+      "Title": "Master",
+      "n": 40,
+      "survival_rate": 0.575,
+      "baseline_accuracy": 0.475,
+      "mine_accuracy": 0.975,
+      "accuracy_gap": 0.5
+    },
+    {
+      "Title": "Miss",
+      "n": 185,
+      "survival_rate": 0.7027027027027027,
+      "baseline_accuracy": 0.7621621621621621,
+      "mine_accuracy": 0.8108108108108109,
+      "accuracy_gap": 0.04864864864864871
+    },
+    {
+      "Title": "Mrs",
+      "n": 126,
+      "survival_rate": 0.7936507936507936,
+      "baseline_accuracy": 0.7936507936507936,
+      "mine_accuracy": 0.8174603174603174,
+      "accuracy_gap": 0.023809523809523836
+    },
+    {
+      "Title": "Mr",
+      "n": 517,
+      "survival_rate": 0.15667311411992263,
+      "baseline_accuracy": 0.8297872340425532,
+      "mine_accuracy": 0.8375241779497099,
+      "accuracy_gap": 0.007736943907156735
+    },
+    {
+      "Title": "Rare",
+      "n": 23,
+      "survival_rate": 0.34782608695652173,
+      "baseline_accuracy": 0.782608695652174,
+      "mine_accuracy": 0.7391304347826086,
+      "accuracy_gap": -0.0434782608695653
+    }
+  ],
+  "by_family_size_bucket": [
+    {
+      "FamilySize": "small_family(2-3)",
+      "n": 263,
+      "survival_rate": 0.5627376425855514,
+      "baseline_accuracy": 0.6996197718631179,
+      "mine_accuracy": 0.7908745247148289,
+      "accuracy_gap": 0.09125475285171103
+    },
+    {
+      "FamilySize": "large_family(4+)",
+      "n": 91,
+      "survival_rate": 0.34065934065934067,
+      "baseline_accuracy": 0.8461538461538461,
+      "mine_accuracy": 0.9230769230769231,
+      "accuracy_gap": 0.07692307692307698
+    },
+    {
+      "FamilySize": "alone",
+      "n": 537,
+      "survival_rate": 0.30353817504655495,
+      "baseline_accuracy": 0.8305400372439479,
+      "mine_accuracy": 0.8379888268156425,
+      "accuracy_gap": 0.007448789571694592
+    }
+  ]
+}
